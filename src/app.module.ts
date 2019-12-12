@@ -6,7 +6,8 @@ import { TasksModule } from './tasks/tasks.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/tasks', { useNewUrlParser: true, useFindAndModify: false }),
+    MongooseModule.forRoot('mongodb://localhost/tasks', { useNewUrlParser: true, useFindAndModify: false,
+                                                          useUnifiedTopology: true }),
     TasksModule,
   ],
   controllers: [AppController],
