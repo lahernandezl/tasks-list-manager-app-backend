@@ -7,10 +7,12 @@ import { TasksService } from './tasks.service';
 @Module({
   imports: [
       MongooseModule.forFeature([{name: 'Task', schema: TaskSchema}]),
-      TaskController,
   ],
   providers: [
       TasksService,
+  ],
+  controllers: [
+    TaskController,
   ],
 })
 export class TasksModule {}
