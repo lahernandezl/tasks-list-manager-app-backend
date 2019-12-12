@@ -25,11 +25,11 @@ export class TasksService {
     // Edit task details
     async updateTask(taskID: string, taskDto: TaskDto): Promise<Task> {
         const updatedTask = await this.taskModel
-            .findByIdAndUpdate(taskID, TaskDto, { new: true });
+            .findByIdAndUpdate(taskID, taskDto, { new: true });
         return updatedTask;
     }
     // Delete a task
-    async deleteTask(taskID: string): Promise<any> {
+    async deleteTask(taskID: string): Promise<Task> {
         const deletedTask = await this.taskModel.findByIdAndRemove(taskID);
         return deletedTask;
     }
